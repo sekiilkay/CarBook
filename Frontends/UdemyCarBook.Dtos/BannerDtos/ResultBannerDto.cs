@@ -1,4 +1,11 @@
 ﻿namespace UdemyCarBook.Dtos.BannerDtos
 {
-    public record ResultBannerDto(int Id, string Title, string Description, string VideoDescription, string VideoUrl);
+    public class ResultBannerDto
+    {
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public string VideoDescription { get; set; }
+        public string VideoUrl { get; set; }
+    }
 }

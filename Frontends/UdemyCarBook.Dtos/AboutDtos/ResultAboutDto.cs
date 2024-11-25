@@ -1,4 +1,10 @@
 ﻿namespace UdemyCarBook.Dtos.AboutDtos
 {
-    public record ResultAboutDto(int Id,string Title, string Description, string ImageUrl);
+    public class ResultAboutDto
+    {
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public string ImageUrl { get; set; }
+    }
 }

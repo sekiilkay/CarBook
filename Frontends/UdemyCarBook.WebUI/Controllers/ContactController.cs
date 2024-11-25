@@ -5,8 +5,14 @@ using UdemyCarBook.Dtos.ContactDtos;
 
 namespace UdemyCarBook.WebUI.Controllers
 {
-    public class ContactController(IHttpClientFactory httpClientFactory) : Controller
+    public class ContactController : Controller
     {
+        private readonly IHttpClientFactory _httpClientFactory;
+        public ContactController(IHttpClientFactory httpClientFactory)
+        {
+            _httpClientFactory = httpClientFactory;
+        }
+
         [HttpGet]
         public IActionResult Index()
         {
@@ -14,19 +20,17 @@ namespace UdemyCarBook.WebUI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Index(CreateContactDto request)
+        public async Task<IActionResult> Index(CreateContactDto createContactDto)
         {
-            var client = httpClientFactory.CreateClient();
-            request.SendDate = DateTime.Now;
-            var jsonData = JsonConvert.SerializeObject(request);
-            StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
-            var responseMessage = await client.PostAsync("https://localhost:7243/api/Contacts", content);
-
+            var client = _httpClientFactory.CreateClient();
+            createContactDto.SendDate = DateTime.Now;
+            var jsonData = JsonConvert.SerializeObject(createContactDto);
+            StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
+            var responseMessage = await client.PostAsync("https://localhost:7243/api/Contacts", stringContent);
             if (responseMessage.IsSuccessStatusCode)
             {
                 return RedirectToAction("Index", "Default");
             }
-
             return View();
         }
     }

@@ -1,4 +1,10 @@
 ﻿namespace UdemyCarBook.Dtos.ServiceDtos
 {
-    public record ResultServiceDto(int Id, string Title, string Description, string IconUrl);
+    public class ResultServiceDto
+    {
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public string IconUrl { get; set; }
+    }
 }
