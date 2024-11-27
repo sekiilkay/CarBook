@@ -18,6 +18,7 @@ namespace UdemyCarBook.Persistance.Repositories.CarRepositories
         {
             return await context.Cars
                 .Include(x => x.Brand)
+                .Include(x => x.CarPricings)
                 .OrderByDescending(x => x.Id)
                 .Take(5)
                 .ToListAsync();

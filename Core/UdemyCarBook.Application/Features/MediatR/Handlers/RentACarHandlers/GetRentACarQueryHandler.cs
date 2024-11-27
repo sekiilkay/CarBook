@@ -16,6 +16,7 @@ namespace UdemyCarBook.Application.Features.MediatR.Handlers.RentACarHandlers
                 Brand = x.Car.Brand.Name,
                 Model = x.Car.Model,
                 CoverImageUrl = x.Car.CoverImageUrl,
+                Amount = x.Car.CarPricings.Where(y=>y.CarId == x.CarId).Select(x=>x.Amount).FirstOrDefault()
             }).ToList();
         }
     }

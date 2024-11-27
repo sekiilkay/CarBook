@@ -14,16 +14,14 @@ namespace UdemyCarBook.WebUI.Controllers
         {
             _httpClientFactory = httpClientFactory;
         }
-        public async Task<IActionResult> Index(int id)
+        public async Task<IActionResult> Index(int queryId)
         {
 
-            var locationId = TempData["locationId"];
+            var id = TempData["locationId"];
 
-            //filterRentACarDto.locationID = int.Parse(locationID.ToString());
-            //filterRentACarDto.available = true;
-            id = int.Parse(locationId.ToString());
+            queryId = int.Parse(id.ToString());
 
-            ViewBag.locationID = locationId;
+            ViewBag.id = id;
 
             var client = _httpClientFactory.CreateClient();
             var responseMessage = await client.GetAsync($"https://localhost:7243/api/RentACars?locationId={id}&available=true");

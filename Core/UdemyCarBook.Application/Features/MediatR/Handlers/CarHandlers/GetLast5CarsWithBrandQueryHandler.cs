@@ -24,6 +24,7 @@ namespace UdemyCarBook.Application.Features.MediatR.Handlers.CarHandlers
                 Model = x.Model,
                 Seat = x.Seat,
                 Transmission = x.Transmission,
+                Price = x.CarPricings.Select(x => x.Amount).FirstOrDefault()
             }).ToList();
         }
     }

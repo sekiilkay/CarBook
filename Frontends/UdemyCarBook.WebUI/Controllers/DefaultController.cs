@@ -38,13 +38,13 @@ namespace UdemyCarBook.WebUI.Controllers
         }
 
         [HttpPost]
-        public IActionResult Index(string book_pick_date, string book_off_date,string time_pick,string time_off,string locationID)
+        public IActionResult Index(string book_pick_date, string book_off_date,string time_pick,string time_off,string id)
         {
             TempData["bookpickdate"] = book_pick_date;
             TempData["bookoffdate"] = book_off_date;
             TempData["timepick"] = time_pick;
             TempData["timeoff"] = time_off;
-            TempData["locationID"] = locationID;
+            TempData["locationId"] = id;
             return RedirectToAction("Index", "RentACarList");
         }
 

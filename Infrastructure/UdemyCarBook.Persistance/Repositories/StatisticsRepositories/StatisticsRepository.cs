@@ -113,7 +113,7 @@ namespace UdemyCarBook.Persistance.Repositories.StatisticsRepositories
         public async Task<int> GetCarCountByKmSmallerThen1000Async()
         {
             return await context.Cars
-                .Where(x => x.Km <= 1000)
+                .Where(x => x.Km <= 10000)
                 .CountAsync();
         }
 

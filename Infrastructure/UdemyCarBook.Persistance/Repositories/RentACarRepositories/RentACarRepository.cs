@@ -14,6 +14,8 @@ namespace UdemyCarBook.Persistance.Repositories.RentACarRepositories
                 .Where(filter)
                 .Include(x => x.Car)
                     .ThenInclude(x => x.Brand)
+                .Include(x => x.Car)
+                    .ThenInclude(x => x.CarPricings)
                 .ToListAsync();
         }
     }
