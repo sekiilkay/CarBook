@@ -16,7 +16,7 @@ Project Images
 
 ![CarBook Default Page 6](https://github.com/user-attachments/assets/d6af867f-8c90-447d-9d33-ccf124991830)
 
-![CarBook Default Page 7](https://github.com/user-attachments/assets/8beedad8-3928-4970-a765-7cb8e26abd71)
+![CarBook Default Page 8](https://github.com/user-attachments/assets/2327daa1-29a5-42b5-83df-9ee6fc2874a2)
 
 ![CarBook Default Page 9](https://github.com/user-attachments/assets/500b01b7-b13f-4fa1-ab5c-adbb398e9eef)
 
